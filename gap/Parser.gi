@@ -469,7 +469,7 @@ InstallGlobalFunction( AutoDoc_Parser_ReadFiles,
                     if temp_curr_line = "" then
                         continue;
                     fi;
-                    temp_curr_line := Concatenation( "gap> ", temp_curr_line );
+                    temp_curr_line := Concatenation( "gap> ", temp_curr_line, " # ", filestream![2], ":", String( line_number ) );
                     is_following_line := PositionSublist( temp_curr_line, ";" ) = fail;
                 fi;
                 Add( temp_string_list, temp_curr_line );
